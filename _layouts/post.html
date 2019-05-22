@@ -7,7 +7,7 @@ layout: default
 		<div class="h-100 tofront">
 			<div class="row {% if page.image %} justify-content-between {% else %} justify-content-center {% endif %}">
 				<div class="{% if page.image %} col-md-6 {% else %} col-md-8 {% endif %} pr-0 pr-md-4 pt-4 pb-4 align-self-center">
-					<p class="text-uppercase font-weight-bold">
+					<p class="text-uppercase">
                         <span class="catlist">
 						{% for category in page.categories %}
                           <a class="sscroll text-danger" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category | downcase }}</a><span class="sep">, </span>
@@ -24,11 +24,6 @@ layout: default
 						</small>
 					</div>
 				</div>
-                {% if page.image %}
-				<div class="col-md-6 pr-0 align-self-center">
-					<img class="rounded" src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image }}{% endif %}" alt="{{ page.title }}">
-				</div>
-                {% endif %}
 			</div>
 		</div>
 	</div>
@@ -39,11 +34,18 @@ layout: default
 
 
 <div class="container-lg pt-4 pb-4">
+	<div class="row">
+	                {% if page.image %}
+				<div class="img-fluid w-100 h-100 pb-5">
+					<img class="rounded" src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image }}{% endif %}" alt="{{ page.title }}">
+				</div>
+                {% endif %}
+	</div>
 	<div class="row justify-content-center">
         
         
         <!-- Share -->
-		<div class="col-lg-2 pr-4 mb-4 col-md-12">
+		<div class="col-lg-1 pr-4 mb-4 col-md-12">
 			<div class="sticky-top sticky-top-offset text-center">
 				<div class="text-muted">
 					Share this
@@ -62,7 +64,7 @@ layout: default
 		</div>
         
         
-		<div class="col-md-12 col-lg-8">
+		<div class="col-md-12 col-lg-10">
             
             <!-- Article -->
 			<article class="article-post">                
