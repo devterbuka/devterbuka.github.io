@@ -12,7 +12,7 @@ layout: default
                         {% if author.avatar %}
                         <img class="rounded-circle" src="{{site.baseurl}}/{{author.avatar}}" alt="{{author.name}}" width="30"/>
                         {% endif %}
-						<small class="ml-3"> {{ author.name }} <span><a target="_blank" href="{{ author.twitter }}" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a> · {{ page.date | date: '%b %d, %Y' }} · {% include meta-read-time.html %}</span>
+						<small class="ml-1"> {{ author.name }} <span><a target="_blank" href="{{ author.twitter }}" class="btn btn-outline-success btn-sm ml-1">Follow</a> · {{ page.date | date: '%b %d, %Y' }} · {% include meta-read-time.html %} · </span>
 			<span class="catlist">
 				{% for category in page.categories %}
                           <a class="sscroll text-danger" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category | downcase }}</a><span class="sep">, </span>
@@ -102,20 +102,7 @@ layout: default
             {% endif %}
             
             
-             <!-- Author Box -->
-                {% if page.author %}				
-				<div class="row mt-5">
-					<div class="col-md-2 align-self-center">
-                         {% if author.avatar %}
-                        <img class="rounded-circle" src="{{site.baseurl}}/{{author.avatar}}" alt="{{author.name}}" width="90"/>
-                        {% endif %} 
-					</div>
-					<div class="col-md-10">		
-                        <h5 class="font-weight-bold">Written by {{ author.name }} {% if author.twitter %}<span><a target="_blank" href="{{ author.twitter }}" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>{% endif %}</h5>
-						{{ author.bio }}					
-					</div>
-				</div>				
-                {% endif %}
+             <!-- related articles -->
             
             <!-- Comments -->
             {% if page.comments != false %}
